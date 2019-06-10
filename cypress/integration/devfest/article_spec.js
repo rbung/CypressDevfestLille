@@ -1,14 +1,7 @@
 describe('Article page', function() {
   context('In an anonymous context', function() {
-    it('should display the article page', function() {
-      cy.server()
-      cy.route('/api/articles/*', 'fixture:/article/cypress-is-cool.json').as(
-        'getArticle'
-      )
-      cy.route(
-        '/api/articles/*/comments',
-        'fixture:/comments/cypress-is-cool.json'
-      ).as('getArticleComments')
+    it.skip('should display the article page', function() {
+      // TODO Let's do some stubbing 😎
       cy.visit('/article/cypress-is-cool-oni8y2')
       cy.get('h1').should('contain', 'Cypress is cool')
       cy.get('.author').should('contain', 'Brice')
@@ -26,43 +19,20 @@ describe('Article page', function() {
         .should('contain', 'JavaScript is cool too ! ❤️')
     })
 
-    it('should display nothing when the article is not found', function() {
-      cy.server()
-      cy.route({
-        url: '/api/articles/**',
-        response: { status: '404', error: 'Not Found' },
-        status: 404,
-      }).as('getArticle')
-
+    it.skip('should display nothing when the article is not found', function() {
+      // TODO Simulate a 404
       cy.visit('/article/unknown-oni8y2')
       cy.get('.navbar').should('exist')
     })
 
-    it('should display nothing when server internal error', function() {
-      cy.server()
-      cy.route({
-        url: '/api/articles/**',
-        response: { status: '500', error: 'Internal error' },
-        status: 500,
-      }).as('getArticle')
-
+    it.skip('should display nothing when server internal error', function() {
+      // TODO Simulate a 500
       cy.visit('/article/internal-error-oni8y2')
       cy.get('.navbar').should('exist')
     })
 
-    it('should display after a long request', function() {
-      cy.server()
-      cy.route({
-        url: '/api/articles/*',
-        response: 'fixture:/article/cypress-is-cool.json',
-        delay: 500,
-      }).as('getArticle')
-      cy.route({
-        url: '/api/articles/*/comments',
-        response: 'fixture:/comments/cypress-is-cool.json',
-        delay: 2000,
-      }).as('getArticleComments')
-
+    it.skip('should display after a long request', function() {
+      // Simulate a delay for each request 🐢
       cy.visit('/article/article2-oni8y2')
       cy.get('h1').should('contain', 'Cypress is cool')
       cy.get('.author').should('contain', 'Brice')
@@ -72,9 +42,13 @@ describe('Article page', function() {
     })
   })
 
-  context('In an authenticated context', function() {
+  context.skip('In an authenticated context', function() {
     beforeEach(function() {
-      cy.login('devfest@lille.fr', 'Lille1234')
+      // TODO You can do better !
+      cy.visit('/login')
+      cy.get('input[type=email]').type('devfest@lille.fr')
+      cy.get('input[type=password]').type('Lille1234{enter}')
+      cy.contains('Devfest Lille').should('be.visible')
 
       cy.server()
       cy.route('/api/articles/*', 'fixture:/article/cypress-is-cool.json').as(

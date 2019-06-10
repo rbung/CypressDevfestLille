@@ -6,12 +6,11 @@ describe('Navigation', function() {
     cy.get('.article-meta').should('have.length', 10)
     cy.get('.tag-list').should('have.length.above', 1)
 
+    // TODO Add some assertions ! You can play with the selector playground.
     cy.log('Visit author page')
     cy.get('.author')
       .first()
       .click()
-    cy.get('.user-img').should('be.visible')
-    cy.get('h4').should('be.visible')
 
     cy.log('Visit article page')
     cy.visit('/')
