@@ -133,14 +133,11 @@ describe('Article page', function() {
       })
       cy.get('textarea').type(comment)
       cy.get('button[type=submit]').click()
-      cy.get('.card').as('comments')
-      cy.get('@comments').should('have.length', 2)
-      cy.get('@comments')
-        .first()
-        .should('contain', 'Post Comment')
-      cy.get('@comments')
-        .eq(1)
-        .should('contain', comment)
+      cy.get('.card').should($cards => {
+        expect($cards.length).to.eq(2)
+        expect($cards[0].textContent, 'first card').to.contain('Post Comment')
+        expect($cards[1].textContent, 'second card').to.contain(comment)
+      })
     })
 
     it('should allow user to delete his comment', function() {

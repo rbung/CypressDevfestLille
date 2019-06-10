@@ -11,6 +11,7 @@ workflows:
           spec: 'cypress/integration/devfest/**'
           start: 'npm start'
           wait-on: 'http://localhost:4100'
+          parallel: true
           group: '1 machine'
           requires:
             - cypress/install
