@@ -1,0 +1,19 @@
+{
+  "article": {
+    "title": "Cypress is cool",
+    "slug": "cypress-is-cool-oni8y2",
+    "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "createdAt": "2018-04-11T14:21:37.840Z",
+    "updatedAt": "2018-04-11T14:22:05.891Z",
+    "tagList": ["e2e", "testing", "JavaScript"],
+    "description": "stuff",
+    "author": {
+      "username": "Brice",
+      "bio": null,
+      "image": "http://image.noelshack.com/fichiers/2017/21/1495963178-brice6.png",
+      "following": false
+    },
+    "favorited": false,
+    "favoritesCount": 2
+  }
+}

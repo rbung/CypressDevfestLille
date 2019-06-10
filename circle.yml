@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/install:
+          build: 'npm run build'
+      - cypress/run:
+          record: true
+          spec: 'cypress/integration/devfest/**'
+          start: 'npm start'
+          wait-on: 'http://localhost:4100'
+          group: '1 machine'
+          requires:
+            - cypress/install
+      - cypress/run:
+          record: true
+          spec: 'cypress/integration/devfest/**'
+          start: 'npm start'
+          wait-on: 'http://localhost:4100'
+          parallel: true
+          parallelism: 4
+          group: '4 machines'
+          requires:
+            - cypress/install

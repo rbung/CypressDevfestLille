@@ -1,0 +1,28 @@
+{
+  "comments": [
+    {
+      "id": 36592,
+      "createdAt": "2019-03-13T20:50:17.722Z",
+      "updatedAt": "2019-03-13T20:50:17.722Z",
+      "body": "You definitely right !",
+      "author": {
+        "username": "Igor",
+        "bio": null,
+        "image": "https://i.skyrock.net/8574/11948574/pics/307677317_small.jpg",
+        "following": false
+      }
+    },
+    {
+      "id": 36592,
+      "createdAt": "2019-03-13T20:50:17.722Z",
+      "updatedAt": "2019-03-13T20:50:17.722Z",
+      "body": "JavaScript is cool too ! ❤️",
+      "author": {
+        "username": "Igor",
+        "bio": null,
+        "image": "https://i.skyrock.net/8574/11948574/pics/307677317_small.jpg",
+        "following": false
+      }
+    }
+  ]
+}
